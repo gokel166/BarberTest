@@ -1,7 +1,7 @@
 import * as mongoose from 'mongoose';
 
 
-const userSchema = new mongoose.Schema({
+const customerSchema = new mongoose.Schema({
     firstName: String,
     lastName: String,
     emailAddress: { type: String, unique: true, lowercase: true, trim: true, max: 80 },
@@ -10,6 +10,6 @@ const userSchema = new mongoose.Schema({
     contactNum: { type: Number, min: 10, max: 10 }
 });
 
-const Customer = mongoose.model('bshop', userSchema);
+const Customer = mongoose.model('Customer', customerSchema);
 
 export default Customer;
